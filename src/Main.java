@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class Main {
                     chucnang2();
                     break;
                 case 3:
-//                    chucnang3();
+                    chucnang3();
                     break;
                 case 4:
 //                    chucnang4();
@@ -60,6 +61,16 @@ public class Main {
             tong += so;
         }
         System.out.println("Tổng các giá trị trong danh sách: " + tong);
+    }
+
+    public static void chucnang3() {
+        if (danhSach.isEmpty()) {
+            System.out.println("Danh sách trống, không có giá trị lớn nhất!");
+            return;
+        }
+        // Sử dụng Collections.max để tìm số lớn nhất trong List
+        double max = Collections.max(danhSach);
+        System.out.println("Giá trị lớn nhất trong danh sách là: " + max);
     }
 
 }
