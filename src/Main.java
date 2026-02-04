@@ -29,7 +29,7 @@ public class Main {
                     chucnang3();
                     break;
                 case 4:
-//                    chucnang4();
+                    chucnang4();
                     break;
                 case 5:
 //                    chucnang5();
@@ -71,6 +71,18 @@ public class Main {
         // Sử dụng Collections.max để tìm số lớn nhất trong List
         double max = Collections.max(danhSach);
         System.out.println("Giá trị lớn nhất trong danh sách là: " + max);
+    }
+
+
+    public static void chucnang4() {
+        if (danhSach.isEmpty()) {
+            System.out.println("Danh sách hiện đang trống!");
+        } else {
+            System.out.println("--- CÁC GIÁ TRỊ TRONG DANH SÁCH ---");
+            for (int i = 0; i < danhSach.size(); i++) {
+                System.out.println("Vị trí " + i + ": " + danhSach.get(i));
+            }
+        }
     }
 
 }
