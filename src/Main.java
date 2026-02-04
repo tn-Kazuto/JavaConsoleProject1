@@ -22,7 +22,7 @@ public class Main {
                     chucnang1();
                     break;
                 case 2:
-//                    chucnang2();
+                    chucnang2();
                     break;
                 case 3:
 //                    chucnang3();
@@ -49,4 +49,17 @@ public class Main {
         danhSach.add(n);
         System.out.println("Đã them thanh cong!");
     }
+
+    public static void chucnang2() {
+        if (danhSach.isEmpty()) {
+            System.out.println("Danh sách trống!");
+            return;
+        }
+        double tong = 0;
+        for (Double so : danhSach) {
+            tong += so;
+        }
+        System.out.println("Tổng các giá trị trong danh sách: " + tong);
+    }
+
 }
