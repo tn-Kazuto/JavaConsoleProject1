@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -32,7 +35,7 @@ public class Main {
                     chucnang4();
                     break;
                 case 5:
-//                    chucnang5();
+                    chucnang5();
                     break;
                 default:
                     System.out.println("Thoat chuong trinh. Chao ban><");
@@ -82,6 +85,26 @@ public class Main {
             for (int i = 0; i < danhSach.size(); i++) {
                 System.out.println("Vị trí " + i + ": " + danhSach.get(i));
             }
+        }
+    }
+
+
+    public static void chucnang5() {
+        try {
+            // Tạo luồng ghi file tên là data.xml
+            XMLEncoder encoder = new XMLEncoder(
+                    new BufferedOutputStream(
+                            new FileOutputStream("data.xml")
+                    )
+            );
+
+            // Ghi toàn bộ danh sách vào file
+            encoder.writeObject(danhSach);
+            encoder.close(); // Đóng luồng
+
+            System.out.println("Đã lưu dữ liệu vào file data.xml thành công!");
+        } catch (Exception e) {
+            System.out.println("Lỗi khi lưu file XML: " + e.getMessage());
         }
     }
 
